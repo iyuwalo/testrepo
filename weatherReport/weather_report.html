@@ -6,13 +6,18 @@
 <body>
    <h1>Weather Report</h1>
 
-  <form id="weatherForm">
-    <label for="city">Enter City:</label>
-    <input type="text" id="city" name="city">
-    <button type="submit">Get Weather</button>
-  </form>
+   <h2>Call Current Weather Data</h2>
 
-  <div id="weatherInfo"></div>
+   <label for="lat">Latitude:</label>
+   <input type="text" id="lat" placeholder="Enter Latitude (e.g. 28.6139)" /><br><br>
+   
+   <label for="lon">Longitude:</label>
+   <input type="text" id="lon" placeholder="Enter Longitude (e.g. 77.2090)" /><br><br>
+   
+   <button onclick="getWeather()">Get Weather</button>
+   
+   <div id="weatherResult"></div>
+
 <script src="./weather_report.js"></script>
 </body>
 </html>
