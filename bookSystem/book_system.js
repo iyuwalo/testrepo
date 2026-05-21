@@ -26,7 +26,10 @@ function showbooks() {
         <p><strong>Author Name:</strong> ${book.authorName}</p>
         <p><strong>Book Description:</strong> ${book.bookDescription}</p>
         <p><strong>No. of Pages:</strong> ${book.pagesNumber} page(s)</p>
-        <button onclick="editbook(${index})">Edit</button>`
+        <button onclick="editbook(${index})">Edit</button>
+        <button onclick="deleteBook(${index})">Delete</button>
+        <hr>`
+        
     );
     document.getElementById('books').innerHTML = booksDiv.join('');
 }
@@ -48,3 +51,10 @@ function editbook(index) {
             document.getElementById('pagesNumber').value = '';
  }
 
+// Delete Book Function
+function deleteBook(index) {
+    if (confirm("Are you sure you want to delete this book?")) {
+        books.splice(index, 1);  // Remove 1 book at the given index
+        showBooks();             // Refresh the displayed book list
+    }
+}
